@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        .new-list {
+            color: red;
+        }
+
+         /* Setting up the body style */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Styling the heading */
+        h1 {
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Styling the list */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        /* Styling the list items */
+        li {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Adding a hover effect to list items */
+        li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+       
+
+        /* Styling the image */
+        img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-top: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease-in-out;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s;
+        }
+
+        /* Image hover effect */
+        img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>About Me</h1>
+
+    <ul>
+        <li>Nickname: <span id="nickname"></span></li>
+        <li>Favorites: <span id="favorite"></span></li>
+        <li>Hometown: <span id="hometown"></span></li>
+    </ul>
+
+    <script>
+        //changing body font family
+        document.body.style.fontFamily = 'Arial, sans-serif';
+        //replacing span with personal info
+        document.getElementById('nickname').textContent='Haybams';
+
+        document.getElementById('favorite').textContent='Black'
+
+        document.getElementById('hometown').textContent='Ado-Ekiti';
+         
+
+        //Adding class to each list
+        var listItems = document.querySelectorAll('li');
+        listItems.forEach(item => item.classList.add('new-list'));
+        
+
+        //creating and appending image
+        var img = document.createElement('img');
+        img.src = './Haybams.jpg';
+        document.body.appendChild(img);
+
+    </script>
+    
+</body>
+</html>
